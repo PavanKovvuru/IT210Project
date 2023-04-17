@@ -1,13 +1,12 @@
 processes = 3
 resources = 4
-max_resources = [int(i) for i in input("maximum resources : ").split()]
 
-print("\n allocated resources for each process:")
-currently_allocated = [[int(i) for i in input(f"process {j + 1} : ").split()] for j in range(processes)]
-
-print("\n maximum resources for each process:")
-max_need = [[int(i) for i in input(f"process {j + 1} : ").split()] for j in range(processes)]
-print(max_need)
+max_resources = [3,1,1,2]
+print(f"\n Available Recources: {max_resources}")
+currently_allocated = [[1,2,2,1],[1,0,3,3],[1,2,1,0]]
+print(f"\n Current allocation: {currently_allocated}")
+max_need = [[3,3,2,2],[1,2,3,4],[1,3,5,0]]
+print(f"\n Maximum Resources: {max_need}\n")
 need = [[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 
 for i in range(processes):
@@ -16,7 +15,7 @@ for i in range(processes):
 
 print(f"\n need: {need}\n")
 # Safety Algorithm
-print("Safety Algorithm\n")
+print("Safety Algorithm:\n")
 count = 0
 sequence = []
 while count < processes:
@@ -34,7 +33,7 @@ if len(sequence) > 0:
     print("The safe sequence is\n", sequence, "\n")
 
 # Request Algorithm
-print("Request Algorithm\n")
+print("Request Algorithm:\n")
 allocated = [0,0,0,0]
 available = [max_resources[i] - allocated[i] for i in range(resources)]
 print(f"total available resources : {available}\n")
