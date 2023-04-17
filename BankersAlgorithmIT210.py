@@ -58,8 +58,8 @@ while count != 0:
                         available[j] += currently_allocated[i][j]
                     break
         if not safe:
-            print("the processes are in an unsafe state.")
+            print("processes are unsafe.")
             break
 
-        print(f"the process is in a safe state.\navailable resources : {available}\n")
+        print(f"this process safe. \n available resources : {available}\n")
 
